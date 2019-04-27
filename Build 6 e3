@@ -1,0 +1,96 @@
+/* 
+    Equipe: 
+        João Rock Brito Santos - Subturma C (Líder) 
+        Felipe Sérgio Pinto - Subturma A 
+        Etapa 1 & 2
+*/
+//Setup
+function setup() {
+  createCanvas(400, 400);
+}
+let x=0
+let y=0
+let i=0
+let j=0
+
+//Jogador
+
+function player() {
+ //mov
+  if (keyIsDown(LEFT_ARROW)) {
+    x -= 5;
+  }
+  
+
+  if (keyIsDown(RIGHT_ARROW)) {
+    x += 5;
+  }
+
+  if (keyIsDown(UP_ARROW)) {
+    y -= 5;
+  }
+
+  if (keyIsDown(DOWN_ARROW)) {
+    y += 5;
+  }
+ if(keyCode === 82){
+    y = 0;
+    x = 0;
+   }
+cirx= 50+x
+ciry= 200+y
+    ellipse(cirx,ciry, 50, 50);
+  //parede
+  if(((cirx>=430)||(cirx<=-30))||((ciry>=430)||(ciry<=-30))){
+   x=0
+   y=0
+   }
+//tiro
+  if (mouseIsPressed) {
+    if (mouseButton === LEFT) {
+      ellipse(50, 50, 50, 50);
+    }
+  }
+
+}
+
+//Inimigo
+
+function enemy() {
+ /*if (keyIsDown(65)) {
+    i -= 5;
+  }
+  
+
+  if (keyIsDown(68)) {
+    i += 5;
+  }
+
+  if (keyIsDown(87)) {
+    j -= 5;
+  }
+
+  if (keyIsDown(83)) {
+    j += 5;
+  }
+   if(keyCode === 82){
+    i = 0;
+    j = 0;
+   }*/
+quadx=320+i
+quady=170+j
+    square(quadx,quady,60);
+  if(((quadx>=430)||(quadx<=-30))||((quady>=430)||(quady<=-30))){
+    i=0
+   j=0
+   }
+  
+}
+
+//Rendering
+
+function draw() {
+  background(220);
+  enemy();
+  player ();
+}

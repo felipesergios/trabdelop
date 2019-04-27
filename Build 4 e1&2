@@ -43,10 +43,6 @@ function player() {
     cirx= (canvas.x/8)+x
     ciry= (canvas.y/2)+y
 ellipse(cirx,ciry, 50, 50); 
-//tiro
-  if (mouseIsPressed) {
-    if (mouseButton === LEFT)
-      ellipse(50, 50, 50, 50);
 }
 }
 

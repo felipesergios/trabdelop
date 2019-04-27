@@ -1,0 +1,37 @@
+/* 
+    Equipe: 
+        João Rock Brito Santos - Subturma C (Líder) 
+        Felipe Sérgio Pinto - Subturma A 
+        Etapa 1 & 2
+*/
+
+function setup() {
+  createCanvas(400, 400);
+}
+let x=0
+let y=0
+function draw() {
+  background(220);
+  square(320,170,60);
+   if (keyIsDown(LEFT_ARROW)) {
+    x -= 5;
+  }
+  
+
+  if (keyIsDown(RIGHT_ARROW)) {
+    x += 5;
+  }
+
+  if (keyIsDown(UP_ARROW)) {
+    y -= 5;
+  }
+
+  if (keyIsDown(DOWN_ARROW)) {
+    y += 5;
+  }
+   //if (keyIsDown(ENTER)) 
+    //y += 50;
+  //}
+ 
+  ellipse(50+x,200+y, 50, 50);
+}

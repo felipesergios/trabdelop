@@ -1,7 +1,7 @@
 # Jogo Genérico
 
 Trata-se de um jogo no qual o objetivo é destruir o maior número possível de alvos. O personagem principal não pode colidir com qualquer um dos obstáculos. A escolha do personagem principal e dos obstáculos fica a critério do desenvolvedor do jogo. Algumas possibilidades de personagem principal são: automóvel, aeronave, animal, pessoa, etc. Os obstáculos podem ser objetos geométricos, automóveis, pedras/meteoros, chamas, animais, balões e etc.
-	O jogador tem uma quantidade predeterminada de chances (vidas). Ele deve controlar o personagem principal buscando evitar que esse colida com os obstáculos. Caso haja colisão, o jogo reinicia e o personagem perde uma vida. O jogador avança de nível ao ultrapassar uma determinada quantidade de pontos. O jogo encerra quando o personagem não tiver mais vidas ou quando o jogador passa por todos os níveis.
+O jogador tem uma quantidade predeterminada de chances (vidas). Ele deve controlar o personagem principal buscando evitar que esse colida com os obstáculos. Caso haja colisão, o jogo reinicia e o personagem perde uma vida. O jogador avança de nível ao ultrapassar uma determinada quantidade de pontos. O jogo encerra quando o personagem não tiver mais vidas ou quando o jogador passa por todos os níveis.
 
 
 Etapas

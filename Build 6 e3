@@ -1,14 +1,15 @@
 /* 
     Equipe: 
         João Rock Brito Santos - Subturma C (Líder) 
-        Felipe Sérgio Pinto - Subturma A 
+        Felipe Sérgio Sousa da Silva - Subturma A 
         Etapa 1 & 2
 */
 //Setup
 function setup() {
-  canvas.x=400
-  canvas.y=400
+  canvas.x=1280
+  canvas.y=720
   createCanvas(canvas.x,canvas.y);
+  frameRate(60)
 }
 let x=0
 let y=0
@@ -20,46 +21,53 @@ let j=0
 function player() {
  //mov
   if (keyIsDown(LEFT_ARROW)) {
-    x -= 5;
-  }
-  
+    x -= 10;
+    }
 
-  if (keyIsDown(RIGHT_ARROW)) {
-    x += 5;
-  }
+    if (keyIsDown(RIGHT_ARROW)) {
+    x += 10;
 
-  if (keyIsDown(UP_ARROW)) {
-    y -= 5;
   }
 
-  if (keyIsDown(DOWN_ARROW)) {
-    y += 5;
+      if (keyIsDown(UP_ARROW)) {
+    y -= 10;
+  }
+
+    if (keyIsDown(DOWN_ARROW)) {
+    y += 10;
   }
  if(keyCode === 82){
     y = 0;
     x = 0;
-   }
+ }
     cirx= (canvas.x/8)+x
     ciry= (canvas.y/2)+y
-    ellipse(cirx,ciry, 50, 50);
-  //parede
-  if(((cirx>=430)||(cirx<=-30))||((ciry>=430)||(ciry<=-30))){
-   x=0
-   y=0
+  //parede x
+    while(cirx<(0-50)){
+    cirx=cirx+(canvas.x+50)
    }
+    while(cirx>(canvas.x+50)){
+    cirx=cirx-(canvas.x+50)
+   }
+  //parede y
+  while(ciry<(0-50)){
+    ciry=ciry+(canvas.y+50)
+   }
+    while(ciry>(canvas.y+50)){
+    ciry=ciry-(canvas.y+50)
+   }
+ellipse(cirx,ciry, 50, 50); 
 //tiro
   if (mouseIsPressed) {
-    if (mouseButton === LEFT) {
+    if (mouseButton === LEFT)
       ellipse(50, 50, 50, 50);
-    }
-  }
-
+}
 }
 
 //Inimigo
 
 function enemy() {
- if (keyIsDown(65)) {
+ /*if (keyIsDown(65)) {
     i -= 5;
   }
   
@@ -78,7 +86,7 @@ function enemy() {
    if(keyCode === 82){
     i = 0;
     j = 0;
-   }
+   }*/
     quadx= ((canvas.x/(8/7))-30)+i
     quady= ((canvas.y/2)-30)+j
     square(quadx,quady,60);

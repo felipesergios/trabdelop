@@ -1,0 +1,118 @@
+/* 
+    Equipe: 
+        João Rock Brito Santos - Subturma C (Líder) 
+        Felipe Sérgio Sousa da Silva - Subturma A 
+        Etapa 1 & 2
+*/
+//Setup
+
+function setup() {
+  canvas.x=1280
+  canvas.y=720
+  createCanvas(canvas.x,canvas.y);
+  Player= new player()
+}
+let x=0
+let y=0
+let i=0
+let j=0
+let movx=0
+let movy=0
+function movset(){
+  if (keyIsDown(LEFT_ARROW)) {
+    x -= 5;
+  }
+
+  if (keyIsDown(RIGHT_ARROW)) {
+    x += 5;
+  }
+
+  if (keyIsDown(UP_ARROW)) {
+    y -= 5;
+  }
+
+  if (keyIsDown(DOWN_ARROW)) {
+    y += 5;
+  }
+  
+  if(keyCode === 82){
+    y = 0;
+    x = 0;
+   }
+ //designa o acumilado de x e y
+  movx=+x
+  movy=+y
+  //posiciona de acordo com a posição inicial+movimentação teclado
+  player.movx=player.x+movx
+  player.movy=player.y+movy
+}
+//Jogador
+
+class player {
+    constructor(){
+    player.x= canvas.x/8;
+    player.y= canvas.y/2;
+  }
+    mov(){
+      //chama o movimento nas setas
+      movset();
+    //colisao parede
+      //parede x
+    while(player.x<(0-50)){
+    player.x=player.x+(canvas.x+50)
+   }
+    while(player.x>(canvas.x+50)){
+    player.x=player.x-(canvas.x+50)
+   }
+  //parede y
+  while(player.y<(0-50)){
+    player.y=player.y+(canvas.y+50)
+   }
+    while(player.yy>(canvas.y+50)){
+    player.y=player.y-(canvas.y+50)
+   }
+  }
+    show () {
+   ellipse(player.movx,player.movy,60,60);  
+}
+}
+//Inimigo
+
+function enemy() {
+ /*if (keyIsDown(65)) {
+    i -= 5;
+  }
+  
+
+  if (keyIsDown(68)) {
+    i += 5;
+  }
+
+  if (keyIsDown(87)) {
+    j -= 5;
+  }
+
+  if (keyIsDown(83)) {
+    j += 5;
+  }
+   if(keyCode === 82){
+    i = 0;
+    j = 0;
+   }*/
+    quadx= ((canvas.x/(8/7))-30)+i
+    quady= ((canvas.y/2)-30)+j
+    square(quadx,quady,60);
+  /*if(((quadx>=430)||(quadx<=-30))||((quady>=430)||(quady<=-30))){
+    i=0
+   j=0
+   }
+*/
+}
+//Rendering
+
+function draw() {
+  background(220);
+  enemy();
+  Player.show();
+  Player.mov();
+}

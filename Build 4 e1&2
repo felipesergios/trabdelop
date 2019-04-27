@@ -1,7 +1,7 @@
 /* 
     Equipe: 
         João Rock Brito Santos - Subturma C (Líder) 
-        Felipe Sérgio Sousa da Silva - Subturma A  
+        Felipe Sérgio Sousa da Silva - Subturma A 
         Etapa 1 & 2
 */
 //Setup
@@ -42,20 +42,6 @@ function player() {
  }
     cirx= (canvas.x/8)+x
     ciry= (canvas.y/2)+y
-  //parede x
-    while(cirx<(0-50)){
-    cirx=cirx+(canvas.x+50)
-   }
-    while(cirx>(canvas.x+50)){
-    cirx=cirx-(canvas.x+50)
-   }
-  //parede y
-  while(ciry<(0-50)){
-    ciry=ciry+(canvas.y+50)
-   }
-    while(ciry>(canvas.y+50)){
-    ciry=ciry-(canvas.y+50)
-   }
 ellipse(cirx,ciry, 50, 50); 
 //tiro
   if (mouseIsPressed) {

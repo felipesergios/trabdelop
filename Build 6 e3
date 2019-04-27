@@ -6,7 +6,9 @@
 */
 //Setup
 function setup() {
-  createCanvas(400, 400);
+  canvas.x=400
+  canvas.y=400
+  createCanvas(canvas.x,canvas.y);
 }
 let x=0
 let y=0
@@ -37,8 +39,8 @@ function player() {
     y = 0;
     x = 0;
    }
-cirx= 50+x
-ciry= 200+y
+    cirx= (canvas.x/8)+x
+    ciry= (canvas.y/2)+y
     ellipse(cirx,ciry, 50, 50);
   //parede
   if(((cirx>=430)||(cirx<=-30))||((ciry>=430)||(ciry<=-30))){
@@ -57,7 +59,7 @@ ciry= 200+y
 //Inimigo
 
 function enemy() {
- /*if (keyIsDown(65)) {
+ if (keyIsDown(65)) {
     i -= 5;
   }
   
@@ -76,9 +78,9 @@ function enemy() {
    if(keyCode === 82){
     i = 0;
     j = 0;
-   }*/
-quadx=320+i
-quady=170+j
+   }
+    quadx= ((canvas.x/(8/7))-30)+i
+    quady= ((canvas.y/2)-30)+j
     square(quadx,quady,60);
   if(((quadx>=430)||(quadx<=-30))||((quady>=430)||(quady<=-30))){
     i=0
